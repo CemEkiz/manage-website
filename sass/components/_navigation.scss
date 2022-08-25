@@ -1,0 +1,93 @@
+@use '../abstracts/' as *;
+
+.primary-header {
+	padding-top: var(--size-700);
+
+	@media (max-width: 50em) {
+		// Drop Shadow
+		&[data-overlay]::before {
+			content: '';
+			position: fixed;
+			inset: 0;
+			background-image: linear-gradient(rgb(0 0 0 / 0), rgb(0 0 0 / 0.8));
+		}
+	}
+}
+
+.nav-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+// Nav Links (for Mobile & Desktop
+.nav-list {
+	font-size: var(--fs-nav);
+	font-weight: var(--fw-semi-bold);
+	display: flex;
+	gap: clamp(var(--size-400), 5vw, var(--size-700));
+
+	a {
+		text-decoration: none;
+		color: var(--clr-primary-400);
+		transition: all 0.2s;
+	}
+
+	a:hover,
+	a:focus {
+		color: var(--clr-accent-400);
+	}
+}
+
+// Mobile Nav
+.primary-navigation {
+	@media (max-width: 50em) {
+		display: none;
+		position: fixed;
+		padding: var(--size-700);
+		inset: 7rem var(--size-600) auto;
+		max-width: 40rem;
+		margin-left: auto;
+		background: var(--clr-neutral-100);
+		border-radius: var(--size-200);
+		box-shadow: 0 0 0.75 rgb(0, 0, 0, 0.5);
+
+		// Nav Links
+		.nav-list {
+			display: grid;
+			gap: var(--size-600);
+			text-align: center;
+			font-weight: var(--fw-bold);
+		}
+
+		// Accessiblity
+		&[data-visible] {
+			display: block;
+		}
+	}
+}
+
+// Mobile Nav Toggle
+.mobile-nav-toggle {
+	display: none;
+
+	@media (max-width: 50em) {
+		display: block;
+		position: fixed;
+		top: var(--size-600);
+		right: var(--size-400);
+		cursor: pointer;
+		background: transparent;
+		border: 0;
+		padding: 0.5em;
+	}
+
+	.icon-close {
+		display: none;
+	}
+}
+
+// .opened {
+// 	display: block;
+// 	position: fixed;
+// }

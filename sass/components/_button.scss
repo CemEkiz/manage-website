@@ -1,6 +1,8 @@
 @use '../abstracts/' as *;
 
 .button {
+	// Primary button (orange)
+	display: inline-flex;
 	border: 0;
 	cursor: pointer;
 	text-decoration: none;
@@ -19,7 +21,7 @@
 		transform: scale(1.01);
 	}
 
-	// White Button
+	// Secondary button (white)
 	&[data-type='inverted'] {
 		background-color: var(--clr-neutral-100);
 		color: var(--clr-accent-400);
@@ -29,5 +31,17 @@
 			background-color: var(--clr-neutral-100);
 			color: var(--clr-accent-300);
 		}
+	}
+}
+
+// Hide button on small screen
+.display-sm-none {
+	display: none;
+}
+
+// Show button on large screen
+@media (min-width: 50em) {
+	.display-md-inline-flex {
+		display: inline-flex;
 	}
 }
