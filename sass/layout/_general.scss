@@ -24,6 +24,11 @@ body {
 	}
 }
 
+// .flow :not(:first-child)
+.flow * + * {
+	margin-top: var(--flow-spacer, 4em);
+}
+
 .padding-block-900 {
 	padding-block: var(--size-900);
 }
