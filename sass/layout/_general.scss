@@ -14,6 +14,20 @@ body {
 	margin-inline: auto;
 }
 
+.vertical-align-center {
+	align-items: center;
+}
+
+.justify-self-end {
+	justify-self: end;
+}
+
+@media (min-width: 50em) {
+	.justify-self-end-md {
+		justify-self: end;
+	}
+}
+
 .even-columns {
 	display: grid;
 	gap: 1rem;

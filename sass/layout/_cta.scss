@@ -1,0 +1,23 @@
+@use '../abstracts/' as *;
+
+.cta {
+	position: relative;
+	isolation: isolate;
+	text-align: center;
+
+	@media (min-width: 50em) {
+		text-align: left;
+	}
+}
+
+.cta::before {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	inset: 0;
+	background-image: url(/assets/svg/bg-tablet-pattern.svg),
+		url(/assets/svg/bg-tablet-pattern.svg);
+	background-repeat: no-repeat;
+	background-position: -15rem -5rem, 160rem -65rem;
+	opacity: 0.1;
+}
